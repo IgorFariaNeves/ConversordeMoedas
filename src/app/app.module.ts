@@ -35,6 +35,7 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     ConvercaoDiretaComponent,
     ConvercaoGeralComponent,
+
   ],
   imports: [
     HttpClientModule,
