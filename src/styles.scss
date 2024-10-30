@@ -1,0 +1,94 @@
+/* Estilos globais */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #101820, #000000); /* Gradiente com mais contraste */
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+}
+
+app-root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Estilo para contêiner principal dos componentes */
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1); /* Card com leve transparência */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+/* Estilo para títulos */
+h1, h2 {
+  color: #ebf55f;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Estilos de formulário */
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ebf55f;
+  background: rgba(255, 255, 255, 0.8);
+  color: #101820;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #ffffff;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background-color: #c70f0f;
+  border: none;
+  color: #ffffff;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #ebf55f;
+  color: #101820;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #101820;
+  color: #ebf55f;
+  font-size: 0.9em;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 0.9em;
+  }
+}

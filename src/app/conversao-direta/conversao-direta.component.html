@@ -1,0 +1,57 @@
+<div class="conversion-container">
+  <h1>Conversão de Moedas</h1>
+
+  <form (ngSubmit)="converterMoeda()" class="form-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Moeda Base</mat-label>
+      <input
+        matInput
+        type="text"
+        [matAutocomplete]="auto"
+        [(ngModel)]="moedaOrigem"
+        name="moedaOrigem"
+        required
+      />
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let moeda of moedasFiltradasOrigem" [value]="moeda">
+          {{ moeda }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Moeda de Destino</mat-label>
+      <input
+        matInput
+        type="text"
+        [matAutocomplete]="autoDestino"
+        [(ngModel)]="moedaDestino"
+        name="moedaDestino"
+        required
+      />
+      <mat-autocomplete #autoDestino="matAutocomplete">
+        <mat-option *ngFor="let moeda of moedasFiltradasDestino" [value]="moeda">
+          {{ moeda }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Valor a Converter</mat-label>
+      <input matInput type="number" [(ngModel)]="valor" name="valor" required />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Converter</button>
+  </form>
+
+  <div *ngIf="resultado !== null" class="resultado">
+    <p>
+      Resultado: {{ valor }} {{ moedaOrigem }} = {{ resultado | number: '1.2-2' }}
+      {{ moedaDestino }}
+    </p>
+  </div>
+
+  <div *ngIf="isError" class="erro">
+    <p>Ocorreu um erro na conversão. Verifique os campos e tente novamente.</p>
+  </div>
+</div>
